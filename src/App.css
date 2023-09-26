@@ -1,24 +1,56 @@
+/* Define a custom font for the entire calculator */
+body {
+  font-family: 'Your Futuristic Font', sans-serif; /* Replace 'Your Futuristic Font' with the actual font name */
+}
+
 .App {
   text-align: center;
-  width: 500 px;
+  width: 500px;
 }
 
 .CalcDisplay {
   height: 40px;
   font-size: 2em;
-  background: navy;
+  background: linear-gradient(to bottom, #4a90e2, #4369b0);
   color: white;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  padding: 10px;
+  opacity: 0.9;
+  border: 2px solid #34495e;
 }
 
-.ButtonContainer{
+.ButtonContainer {
   display: flex;
-  flex: 0 1 100%;
-  flex-wrap:  wrap;
+  flex-wrap: wrap;
+  gap: 5px;
 }
 
-.CalcButton{
+.CalcButton {
   display: flex;
-  flex: 0 1 25%;
+  flex: 0 1 calc(25% - 10px);
   font-size: 2em;
   justify-content: center;
+  background: linear-gradient(to bottom, #95a5a6, #7f8c8d);
+  color: white;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+  border: 1px solid #bdc3c7;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.CalcButton:hover {
+  background: linear-gradient(to bottom, #7f8c8d, #95a5a6);
+}
+
+.MySurnameButton {
+  background: linear-gradient(to bottom, #2ecc71, #27ae60);
+  color: white;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+  border: 1px solid #1e8449;
+  border-radius: 5px;
+}
+
+.MySurnameButton:hover {
+  background: linear-gradient(to bottom, #27ae60, #2ecc71);
 }
