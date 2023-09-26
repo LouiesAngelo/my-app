@@ -3,7 +3,7 @@ import './App.css';
 
 function CalcButton({label}) {
   return (
-    <button>
+    <button className='CalcButton'>
       {label}
     </button>
   );
