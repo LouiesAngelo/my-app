@@ -72,17 +72,17 @@ function App() {
   const nameClickHandler = (e) => {
     e.preventDefault();
     // Action to display your name
-    alert("Display your name in the calculator display");
+    alert("Louies Angelo Mesia");
   }
 
   const handleMySurnameClick = () => {
     // Display your surname
-    setDisp('MESIA');
+    setDisp('Louies Angelo Mesia');
   };
 
   return (
     <div className='CalcContainer'>
-      <h1 className="CalculatorTitle">Calculator</h1>
+      <h1 className="CalculatorTitle">Louies Angelo Mesia - IT3A</h1>
       <CalcDisplay display={disp} />
       <div className='ButtonContainer'>
         <CalcButton label={7} onClick={numberClickHandler} buttonClassName={"CalcButtonNum"} />
@@ -107,7 +107,7 @@ function App() {
       </div>
       <div className='Surname'>
         <button className='CalcButton MySurnameButton' onClick={handleMySurnameClick}>
-          My Surname
+          MESIA
         </button>
       </div>
     </div>
