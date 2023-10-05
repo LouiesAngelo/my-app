@@ -57,6 +57,7 @@ body {
 }
 
 .CalcButtonClear {
+  font-size: 2em;
   background: #e74c3c;
   color: #ffffff;
   border-radius: 50%;
@@ -70,6 +71,7 @@ body {
 }
 
 .CalcButtonEqual {
+  font-size: 2em;
   background: #3498db;
   color: #ffffff;
   border-radius: 50%;
