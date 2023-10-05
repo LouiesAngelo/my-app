@@ -18,7 +18,7 @@ function CalcDisplay({ display }) {
 }
 
 function App() {
-  const [disp, setDisp] = useState('0'); // Initialize the display with '0' as a string
+  const [disp, setDisp] = useState('0');
   const [num1, setNum1] = useState(null);
   const [oper, setOper] = useState(null);
   const [num2, setNum2] = useState(null);
@@ -26,51 +26,76 @@ function App() {
   const numberClickHandler = (e) => {
     e.preventDefault();
     const value = e.target.innerHTML;
-    let num = value;
 
     if (oper === null) {
       if (num1 !== null) {
-        num = num1 + num;
+        setNum1(num1 + value);
+        setDisp(num1 + value);
+      } else {
+        setNum1(value);
+        setDisp(value);
       }
-      setNum1(num);
-      setDisp(num);
     } else {
       if (num2 !== null) {
-        num = num2 + num;
+        setNum2(num2 + value);
+        setDisp(num2 + value);
+      } else {
+        setNum2(value);
+        setDisp(value);
       }
-      setNum2(num);
-      setDisp(num);
     }
   }
 
   const operatorClickHandler = (e) => {
     e.preventDefault();
     const value = e.target.innerHTML;
-    setOper(value);
-    setDisp(value);
+
+    if (num1 !== null && oper === null) {
+      setOper(value);
+      setDisp(value);
+    }
   }
 
   const equalClickHandler = (e) => {
     e.preventDefault();
 
-    if (oper === "+") {
-      setDisp(parseInt(num1) + parseInt(num2));
-    } else {
-      setDisp("ERROR");
+    if (num1 !== null && oper !== null && num2 !== null) {
+      let result;
+
+      switch (oper) {
+        case '+':
+          result = parseInt(num1) + parseInt(num2);
+          break;
+        case '-':
+          result = parseInt(num1) - parseInt(num2);
+          break;
+        case '*':
+          result = parseInt(num1) * parseInt(num2);
+          break;
+        case '÷':
+          result = parseInt(num1) / parseInt(num2);
+          break;
+        default:
+          result = 'ERROR';
+      }
+
+      setDisp(result);
+      setNum1(result);
+      setOper(null);
+      setNum2(null);
     }
   }
 
   const clearClickHandler = (e) => {
     e.preventDefault();
 
-    setDisp('0'); // Reset display to '0'
+    setDisp('0');
     setNum1(null);
     setOper(null);
     setNum2(null);
   }
 
   const handleMySurnameClick = () => {
-    // Display your surname
     setDisp('Louies Angelo Mesia');
   };
 
