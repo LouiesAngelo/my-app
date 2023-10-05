@@ -51,8 +51,10 @@ function App() {
     const value = e.target.innerHTML;
 
     if (num1 !== null && operator === null) {
-      setOperator(value);
-      setDisplay(value);
+      // Replace '×' with '*' for multiplication
+      const operatorValue = value === '×' ? '*' : value;
+      setOperator(operatorValue);
+      setDisplay(operatorValue);
     }
   };
 
@@ -116,8 +118,8 @@ function App() {
         <CalcButton label={2} onClick={numberClickHandler} buttonClassName={'CalcButtonNum'} />
         <CalcButton label={3} onClick={numberClickHandler} buttonClassName={'CalcButtonNum'} />
         <CalcButton label={'×'} onClick={operatorClickHandler} />
-        <CalcButton label={'C'} onClick={clearClickHandler} buttonClassName={'CalcButtonClear'} />
         <CalcButton label={0} onClick={numberClickHandler} buttonClassName={'CalcButtonNum'} />
+        <CalcButton label={'C'} onClick={clearClickHandler} buttonClassName={'CalcButtonClear'} />
         <CalcButton label={'='} onClick={equalClickHandler} buttonClassName={'CalcButtonEqual'} />
         <CalcButton label={'÷'} onClick={operatorClickHandler} />
       </div>
