@@ -64,7 +64,7 @@ body {
 }
 
 .CalcButtonClear:hover {
-  background: #db7902;
+  background: #db7902; /* Darker orange on hover */
   transform: scale(1.1);
 }
 
@@ -76,7 +76,7 @@ body {
 }
 
 .CalcButtonEqual:hover {
-  background: #2980b9;
+  background: #2980b9; /* Darker blue on hover */
   transform: scale(1.1);
 }
 
@@ -90,14 +90,23 @@ body {
 }
 
 .MySurnameButton:hover {
-  background: #2ecc71;
+  background: #2ecc71; /* Darker green on hover */
   transform: scale(1.1);
 }
 
-.Name {
-  margin-top: 20px;
+/* Add this CSS for the number buttons */
+.CalcButtonNum {
+  font-size: 2em;
+  background: linear-gradient(to bottom, #c0c0c0, #a0a0a0); /* Silver gradient */
+  color: #333; /* Text color */
+  border-radius: 50%;
+  padding: 20px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.1s;
 }
 
-.Surname {
-  margin-top: 20px;
+.CalcButtonNum:hover {
+  background: linear-gradient(to bottom, #a0a0a0, #808080); /* Darker silver on hover */
+  transform: scale(1.1);
 }
+
