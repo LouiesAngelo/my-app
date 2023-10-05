@@ -1,6 +1,6 @@
 body {
   font-family: 'Your Futuristic Font', sans-serif;
-  background: linear-gradient(to bottom, #2e3440, #1f2833);
+  background: linear-gradient(to bottom, #2e2e2e, #1a1a1a);
   color: #fff;
 }
 
@@ -8,26 +8,28 @@ body {
   text-align: center;
   width: 400px;
   margin: 0 auto;
-  background: linear-gradient(to bottom, #323b45, #2c343d);
-  border-radius: 10px;
+  background: linear-gradient(to bottom, #2d3137, #24282e);
+  border-radius: 15px;
   box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.5);
   padding: 20px;
   position: relative;
+  border: 2px solid #34495e;
 }
 
 .CalculatorTitle {
   font-size: 1.5em;
   margin-bottom: 10px;
   color: #3498db;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .CalcDisplay {
   height: 60px;
   font-size: 2.5em;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.1);
   color: #ccc;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-  border-radius: 5px;
+  border-radius: 10px;
   padding: 10px;
   border: 2px solid transparent;
   margin-bottom: 20px;
@@ -41,44 +43,55 @@ body {
 
 .CalcButton {
   font-size: 2em;
-  background: linear-gradient(to bottom, #49525e, #394147);
+  background: linear-gradient(to bottom, #4a90e2, #357ebd);
   color: white;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
-  border: 2px solid transparent;
-  border-radius: 5px;
-  padding: 15px 0;
+  border-radius: 50%;
+  padding: 20px;
   cursor: pointer;
-  transition: background 0.3s, transform 0.1s, border-color 0.3s;
+  transition: background 0.3s, transform 0.1s;
 }
 
 .CalcButton:hover {
-  background: linear-gradient(to bottom, #394147, #2e363f);
-  transform: scale(1.05);
-  border-color: #3498db;
+  background: linear-gradient(to bottom, #357ebd, #2a6b9f);
+  transform: scale(1.1);
 }
 
 .CalcButtonClear {
   background: #e74c3c;
+  border-radius: 50%;
+  padding: 20px;
+  transition: background 0.3s, transform 0.1s;
+}
+
+.CalcButtonClear:hover {
+  background: #c0392b;
+  transform: scale(1.1);
 }
 
 .CalcButtonEqual {
   background: #3498db;
+  border-radius: 50%;
+  padding: 20px;
+  transition: background 0.3s, transform 0.1s;
+}
+
+.CalcButtonEqual:hover {
+  background: #2980b9;
+  transform: scale(1.1);
 }
 
 .MySurnameButton {
   background: #27ae60;
   color: white;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
-  border: none;
-  border-radius: 5px;
-  padding: 15px 0;
+  border-radius: 50%;
+  padding: 20px;
   cursor: pointer;
   transition: background 0.3s, transform 0.1s;
 }
 
 .MySurnameButton:hover {
   background: #2ecc71;
-  transform: scale(1.05);
+  transform: scale(1.1);
 }
 
 .Name {
