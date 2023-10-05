@@ -1,68 +1,110 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculator</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <div class='CalcContainer'>
-        <div class='CalcDisplay' id='display'>
-            0
-        </div>
-        <div class='ButtonContainer'>
-            <button class='CalcButton' onclick="addToDisplay('7')">7</button>
-            <button class='CalcButton' onclick="addToDisplay('8')">8</button>
-            <button class='CalcButton' onclick="addToDisplay('9')">9</button>
-            <button class='CalcButton' onclick="addToDisplay('+')">+</button>
-            <button class='CalcButton' onclick="addToDisplay('4')">4</button>
-            <button class='CalcButton' onclick="addToDisplay('5')">5</button>
-            <button class='CalcButton' onclick="addToDisplay('6')">6</button>
-            <button class='CalcButton' onclick="addToDisplay('-')">-</button>
-            <button class='CalcButton' onclick="addToDisplay('1')">1</button>
-            <button class='CalcButton' onclick="addToDisplay('2')">2</button>
-            <button class='CalcButton' onclick="addToDisplay('3')">3</button>
-            <button class='CalcButton' onclick="addToDisplay('*')">*</button>
-            <button class='CalcButton' onclick="clearDisplay()">C</button>
-            <button class='CalcButton' onclick="addToDisplay('0')">0</button>
-            <button class='CalcButton' onclick="calculate()">=</button>
-            <button class='CalcButton' onclick="addToDisplay('/')">÷</button>
-            <button class='CalcButton MySurnameButton' onclick="handleMySurnameClick()">
-                My Surname
-            </button>
-        </div>
+import React, { useState } from 'react';
+import './App.css';
+
+function CalcButton({ label, onClick, buttonClassName = 'CalcButton' }) {
+  return (
+    <button className={buttonClassName} onClick={onClick}>
+      {label}
+    </button>
+  );
+}
+
+function CalcDisplay({ display }) {
+  return (
+    <div className='CalcDisplay'>
+      {display}
     </div>
-    <script>
-        let displayValue = "0";
+  );
+}
 
-        function addToDisplay(value) {
-            if (displayValue === "0") {
-                displayValue = value;
-            } else {
-                displayValue += value;
-            }
-            document.getElementById("display").textContent = displayValue;
-        }
+function App() {
+  const [disp, setDisp] = useState(0);
+  const [num1, setNum1] = useState(null);
+  const [oper, setOper] = useState(null);
+  const [num2, setNum2] = useState(null);
 
-        function clearDisplay() {
-            displayValue = "0";
-            document.getElementById("display").textContent = displayValue;
-        }
+  const numberClickHandler = (e) => {
+    e.preventDefault();
+    const value = e.target.innerHTML;
+    var num = value;
+    if (oper === null) {
+      if (num1 !== null) {
+        num = num1 + num;
+      }
+      setNum1(num);
+      setDisp(num);
+    } else {
+      if (num2 !== null) {
+        num = num2 + num;
+      }
+      setNum2(num);
+      setDisp(num);
+    }
+  }
 
-        function calculate() {
-            try {
-                displayValue = eval(displayValue).toString();
-                document.getElementById("display").textContent = displayValue;
-            } catch (error) {
-                displayValue = "Error";
-                document.getElementById("display").textContent = displayValue;
-            }
-        }
+  const operatorClickHandler = (e) => {
+    e.preventDefault();
+    const value = e.target.innerHTML;
+    setOper(value);
+    setDisp(value);
+  }
 
-        function handleMySurnameClick() {
-            alert("MESIA");
-        }
-    </script>
-</body>
-</html>
+  const equalClickHandler = (e) => {
+    e.preventDefault();
+
+    if (oper === "+") {
+      setDisp(parseInt(num1) + parseInt(num2));
+    } else {
+      setDisp("ERROR");
+    }
+  }
+
+  const clearClickHandler = (e) => {
+    e.preventDefault();
+
+    setDisp(0);
+    setNum1(null);
+    setOper(null);
+    setNum2(null);
+  }
+
+  const nameClickHandler = (e) => {
+    e.preventDefault();
+    // Action to display your name
+    alert("Display your name in the calculator display");
+  }
+
+  const handleMySurnameClick = () => {
+    // Display your surname
+    setDisp('MESIA');
+  };
+
+  return (
+    <div className='CalcContainer'>
+      <CalcDisplay display={disp} />
+      <div className='ButtonContainer'>
+        <CalcButton label={7} onClick={numberClickHandler} buttonClassName={"CalcButtonNum"} />
+        <CalcButton label={8} onClick={numberClickHandler} buttonClassName={"CalcButtonNum"} />
+        <CalcButton label={9} onClick={numberClickHandler} buttonClassName={"CalcButtonNum"} />
+        <CalcButton label={"+"} onClick={operatorClickHandler} />
+        <CalcButton label={4} onClick={numberClickHandler} buttonClassName={"CalcButtonNum"} />
+        <CalcButton label={5} onClick={numberClickHandler} buttonClassName={"CalcButtonNum"} />
+        <CalcButton label={6} onClick={numberClickHandler} buttonClassName={"CalcButtonNum"} />
+        <CalcButton label={"-"} onClick={operatorClickHandler} />
+        <CalcButton label={1} onClick={numberClickHandler} buttonClassName={"CalcButtonNum"} />
+        <CalcButton label={2} onClick={numberClickHandler} buttonClassName={"CalcButtonNum"} />
+        <CalcButton label={3} onClick={numberClickHandler} buttonClassName={"CalcButtonNum"} />
+        <CalcButton label={"*"} onClick={operatorClickHandler} />
+        <CalcButton label={"C"} onClick={clearClickHandler} />
+        <CalcButton label={0} onClick={numberClickHandler} buttonClassName={"CalcButtonNum"} />
+        <CalcButton label={"="} onClick={equalClickHandler} />
+        <CalcButton label={"÷"} onClick={operatorClickHandler} />
+        <button className='CalcButton MySurnameButton' onClick={handleMySurnameClick}>
+          My Surname
+        </button>
+      </div>
+    </div>
+  );
+}
+
+export default App;
