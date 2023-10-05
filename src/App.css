@@ -1,56 +1,101 @@
-/* Define a custom font for the entire calculator */
 body {
   font-family: 'Your Futuristic Font', sans-serif; /* Replace 'Your Futuristic Font' with the actual font name */
+  background-color: #f0f0f0; /* Background color */
 }
 
-.App {
+.CalcContainer {
   text-align: center;
-  width: 500px;
+  width: 400px;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  position: relative;
+}
+
+.CalculatorTitle {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  color: #333;
 }
 
 .CalcDisplay {
-  height: 40px;
-  font-size: 2em;
-  background: linear-gradient(to bottom, #4a90e2, #4369b0);
-  color: white;
+  height: 60px;
+  font-size: 2.5em;
+  background: #fff;
+  color: #333;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
   padding: 10px;
   opacity: 0.9;
   border: 2px solid #34495e;
+  margin-bottom: 20px;
 }
 
 .ButtonContainer {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 5px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
 }
 
 .CalcButton {
-  display: flex;
-  flex: 0 1 calc(25% - 10px);
   font-size: 2em;
-  justify-content: center;
-  background: linear-gradient(to bottom, #95a5a6, #7f8c8d);
+  background: #95a5a6;
   color: white;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
-  border: 1px solid #bdc3c7;
+  border: none;
   border-radius: 5px;
+  padding: 15px 0;
   cursor: pointer;
+  transition: background 0.3s, transform 0.1s;
 }
 
 .CalcButton:hover {
-  background: linear-gradient(to bottom, #7f8c8d, #95a5a6);
+  background: #7f8c8d;
+  transform: scale(1.05);
+}
+
+.CalcButtonClear {
+  background: #e74c3c; /* Red for Clear button */
+}
+
+.CalcButtonEqual {
+  background: #3498db; /* Blue for Equal button */
+}
+
+.CalcButtonName {
+  background: #2ecc71; /* Green for Name button */
 }
 
 .MySurnameButton {
-  background: linear-gradient(to bottom, #2ecc71, #27ae60);
+  background: #27ae60;
   color: white;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
-  border: 1px solid #1e8449;
+  border: none;
   border-radius: 5px;
+  padding: 15px 0;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.1s;
+}
+
+.MySurnameButton {
+  background: #2ecc71; /* Green for My Surname button */
+  border-radius: 5px;
+  padding: 15px 0;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.1s;
 }
 
 .MySurnameButton:hover {
-  background: linear-gradient(to bottom, #27ae60, #2ecc71);
+  background: #27ae60;
+  transform: scale(1.05);
+}
+
+.Name {
+  margin-top: 20px;
+}
+
+.Surname {
+  margin-top: 20px;
 }

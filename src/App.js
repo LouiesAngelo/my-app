@@ -18,7 +18,7 @@ function CalcDisplay({ display }) {
 }
 
 function App() {
-  const [disp, setDisp] = useState(0);
+  const [disp, setDisp] = useState('0'); // Initialize the display with '0' as a string
   const [num1, setNum1] = useState(null);
   const [oper, setOper] = useState(null);
   const [num2, setNum2] = useState(null);
@@ -26,7 +26,8 @@ function App() {
   const numberClickHandler = (e) => {
     e.preventDefault();
     const value = e.target.innerHTML;
-    var num = value;
+    let num = value;
+
     if (oper === null) {
       if (num1 !== null) {
         num = num1 + num;
@@ -62,7 +63,7 @@ function App() {
   const clearClickHandler = (e) => {
     e.preventDefault();
 
-    setDisp(0);
+    setDisp('0'); // Reset display to '0'
     setNum1(null);
     setOper(null);
     setNum2(null);
@@ -81,6 +82,7 @@ function App() {
 
   return (
     <div className='CalcContainer'>
+      <h1 className="CalculatorTitle">Calculator</h1>
       <CalcDisplay display={disp} />
       <div className='ButtonContainer'>
         <CalcButton label={7} onClick={numberClickHandler} buttonClassName={"CalcButtonNum"} />
@@ -95,10 +97,15 @@ function App() {
         <CalcButton label={2} onClick={numberClickHandler} buttonClassName={"CalcButtonNum"} />
         <CalcButton label={3} onClick={numberClickHandler} buttonClassName={"CalcButtonNum"} />
         <CalcButton label={"*"} onClick={operatorClickHandler} />
-        <CalcButton label={"C"} onClick={clearClickHandler} />
+        <CalcButton label={"C"} onClick={clearClickHandler} buttonClassName={"CalcButtonClear"} />
         <CalcButton label={0} onClick={numberClickHandler} buttonClassName={"CalcButtonNum"} />
-        <CalcButton label={"="} onClick={equalClickHandler} />
+        <CalcButton label={"="} onClick={equalClickHandler} buttonClassName={"CalcButtonEqual"} />
         <CalcButton label={"÷"} onClick={operatorClickHandler} />
+      </div>
+      <div className='Name'>
+        <CalcButton label={"Your Name"} onClick={nameClickHandler} buttonClassName={"CalcButtonName"} />
+      </div>
+      <div className='Surname'>
         <button className='CalcButton MySurnameButton' onClick={handleMySurnameClick}>
           My Surname
         </button>
