@@ -118,8 +118,8 @@ function App() {
         <CalcButton label={2} onClick={numberClickHandler} buttonClassName={'CalcButtonNum'} />
         <CalcButton label={3} onClick={numberClickHandler} buttonClassName={'CalcButtonNum'} />
         <CalcButton label={'×'} onClick={operatorClickHandler} />
-        <CalcButton label={0} onClick={numberClickHandler} buttonClassName={'CalcButtonNum'} />
         <CalcButton label={'C'} onClick={clearClickHandler} buttonClassName={'CalcButtonClear'} />
+        <CalcButton label={0} onClick={numberClickHandler} buttonClassName={'CalcButtonNum'} />
         <CalcButton label={'='} onClick={equalClickHandler} buttonClassName={'CalcButtonEqual'} />
         <CalcButton label={'÷'} onClick={operatorClickHandler} />
       </div>
