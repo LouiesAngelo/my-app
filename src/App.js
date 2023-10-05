@@ -27,12 +27,22 @@ function App() {
     e.preventDefault();
     const value = e.target.innerHTML;
 
-    setDisplay(value);
-
     if (operator === null) {
-      setNum1((prevNum) => prevNum + value);
+      if (num1 !== null) {
+        setNum1((prevNum) => prevNum + value);
+        setDisplay((prevDisplay) => prevDisplay + value);
+      } else {
+        setNum1(value);
+        setDisplay(value);
+      }
     } else {
-      setNum2((prevNum) => prevNum + value);
+      if (num2 !== null) {
+        setNum2((prevNum) => prevNum + value);
+        setDisplay((prevDisplay) => prevDisplay + value);
+      } else {
+        setNum2(value);
+        setDisplay(value);
+      }
     }
   };
 
@@ -105,7 +115,7 @@ function App() {
         <CalcButton label={1} onClick={numberClickHandler} buttonClassName={'CalcButtonNum'} />
         <CalcButton label={2} onClick={numberClickHandler} buttonClassName={'CalcButtonNum'} />
         <CalcButton label={3} onClick={numberClickHandler} buttonClassName={'CalcButtonNum'} />
-        <CalcButton label={'*'} onClick={operatorClickHandler} />
+        <CalcButton label={'×'} onClick={operatorClickHandler} />
         <CalcButton label={'C'} onClick={clearClickHandler} buttonClassName={'CalcButtonClear'} />
         <CalcButton label={0} onClick={numberClickHandler} buttonClassName={'CalcButtonNum'} />
         <CalcButton label={'='} onClick={equalClickHandler} buttonClassName={'CalcButtonEqual'} />
