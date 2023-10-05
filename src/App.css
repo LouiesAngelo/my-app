@@ -1,15 +1,16 @@
 body {
   font-family: 'Your Futuristic Font', sans-serif; /* Replace 'Your Futuristic Font' with the actual font name */
-  background-color: #f0f0f0; /* Background color */
+  background: linear-gradient(to bottom, #34495e, #2c3e50); /* Gradient background */
+  color: #fff; /* Text color */
 }
 
 .CalcContainer {
   text-align: center;
   width: 400px;
   margin: 0 auto;
-  background-color: #fff;
+  background: linear-gradient(to bottom, #fff, #ecf0f1); /* Container background gradient */
   border-radius: 10px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
   padding: 20px;
   position: relative;
 }
@@ -17,7 +18,7 @@ body {
 .CalculatorTitle {
   font-size: 1.5em;
   margin-bottom: 10px;
-  color: #333;
+  color: #3498db; /* Blue title color */
 }
 
 .CalcDisplay {
@@ -29,7 +30,7 @@ body {
   border-radius: 5px;
   padding: 10px;
   opacity: 0.9;
-  border: 2px solid #34495e;
+  border: 2px solid #3498db; /* Blue border */
   margin-bottom: 20px;
 }
 
@@ -41,19 +42,20 @@ body {
 
 .CalcButton {
   font-size: 2em;
-  background: #95a5a6;
+  background: linear-gradient(to bottom, #95a5a6, #7f8c8d); /* Button gradient */
   color: white;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
-  border: none;
+  border: 2px solid transparent; /* Transparent border for button */
   border-radius: 5px;
   padding: 15px 0;
   cursor: pointer;
-  transition: background 0.3s, transform 0.1s;
+  transition: background 0.3s, transform 0.1s, border-color 0.3s; /* Transition for hover effect */
 }
 
 .CalcButton:hover {
-  background: #7f8c8d;
+  background: linear-gradient(to bottom, #7f8c8d, #6d7a7b); /* Hover gradient */
   transform: scale(1.05);
+  border-color: #34495e; /* Border color on hover */
 }
 
 .CalcButtonClear {
@@ -64,10 +66,6 @@ body {
   background: #3498db; /* Blue for Equal button */
 }
 
-.CalcButtonName {
-  background: #2ecc71; /* Green for Name button */
-}
-
 .MySurnameButton {
   background: #27ae60;
   color: white;
@@ -79,16 +77,8 @@ body {
   transition: background 0.3s, transform 0.1s;
 }
 
-.MySurnameButton {
-  background: #2ecc71; /* Green for My Surname button */
-  border-radius: 5px;
-  padding: 15px 0;
-  cursor: pointer;
-  transition: background 0.3s, transform 0.1s;
-}
-
 .MySurnameButton:hover {
-  background: #27ae60;
+  background: #2ecc71; /* Green for My Surname button on hover */
   transform: scale(1.05);
 }
 
