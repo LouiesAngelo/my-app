@@ -1,16 +1,16 @@
 body {
-  font-family: 'Your Futuristic Font', sans-serif; /* Replace 'Your Futuristic Font' with the actual font name */
-  background: linear-gradient(to bottom, #34495e, #2c3e50); /* Gradient background */
-  color: #fff; /* Text color */
+  font-family: 'Your Futuristic Font', sans-serif;
+  background: linear-gradient(to bottom, #2e3440, #1f2833);
+  color: #fff;
 }
 
 .CalcContainer {
   text-align: center;
   width: 400px;
   margin: 0 auto;
-  background: linear-gradient(to bottom, #fff, #ecf0f1); /* Container background gradient */
+  background: linear-gradient(to bottom, #323b45, #2c343d);
   border-radius: 10px;
-  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.5);
   padding: 20px;
   position: relative;
 }
@@ -18,19 +18,18 @@ body {
 .CalculatorTitle {
   font-size: 1.5em;
   margin-bottom: 10px;
-  color: #3498db; /* Blue title color */
+  color: #3498db;
 }
 
 .CalcDisplay {
   height: 60px;
   font-size: 2.5em;
-  background: #fff;
-  color: #333;
+  background: rgba(255, 255, 255, 0.2);
+  color: #ccc;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
   padding: 10px;
-  opacity: 0.9;
-  border: 2px solid #3498db; /* Blue border */
+  border: 2px solid transparent;
   margin-bottom: 20px;
 }
 
@@ -42,34 +41,34 @@ body {
 
 .CalcButton {
   font-size: 2em;
-  background: linear-gradient(to bottom, #95a5a6, #7f8c8d); /* Button gradient */
+  background: linear-gradient(to bottom, #49525e, #394147);
   color: white;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
-  border: 2px solid transparent; /* Transparent border for button */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+  border: 2px solid transparent;
   border-radius: 5px;
   padding: 15px 0;
   cursor: pointer;
-  transition: background 0.3s, transform 0.1s, border-color 0.3s; /* Transition for hover effect */
+  transition: background 0.3s, transform 0.1s, border-color 0.3s;
 }
 
 .CalcButton:hover {
-  background: linear-gradient(to bottom, #7f8c8d, #6d7a7b); /* Hover gradient */
+  background: linear-gradient(to bottom, #394147, #2e363f);
   transform: scale(1.05);
-  border-color: #34495e; /* Border color on hover */
+  border-color: #3498db;
 }
 
 .CalcButtonClear {
-  background: #e74c3c; /* Red for Clear button */
+  background: #e74c3c;
 }
 
 .CalcButtonEqual {
-  background: #3498db; /* Blue for Equal button */
+  background: #3498db;
 }
 
 .MySurnameButton {
   background: #27ae60;
   color: white;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
   border: none;
   border-radius: 5px;
   padding: 15px 0;
@@ -78,7 +77,7 @@ body {
 }
 
 .MySurnameButton:hover {
-  background: #2ecc71; /* Green for My Surname button on hover */
+  background: #2ecc71;
   transform: scale(1.05);
 }
 
