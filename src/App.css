@@ -58,7 +58,7 @@ body {
 
 .CalcButtonClear {
   background: #e74c3c;
-  color; #ffffff;
+  color: #ffffff;
   border-radius: 50%;
   padding: 20px;
   transition: background 0.3s, transform 0.1s;
@@ -71,7 +71,7 @@ body {
 
 .CalcButtonEqual {
   background: #3498db;
-  color; #ffffff;
+  color: #ffffff;
   border-radius: 50%;
   padding: 20px;
   transition: background 0.3s, transform 0.1s;
