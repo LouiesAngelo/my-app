@@ -44,7 +44,7 @@ body {
 .CalcButton {
   font-size: 2em;
   background: linear-gradient(to bottom, #4a90e2, #357ebd);
-  color: white;
+  color: #ffffff;;
   border-radius: 50%;
   padding: 20px;
   cursor: pointer;
@@ -58,6 +58,7 @@ body {
 
 .CalcButtonClear {
   background: #e74c3c;
+  color; #ffffff;
   border-radius: 50%;
   padding: 20px;
   transition: background 0.3s, transform 0.1s;
@@ -70,6 +71,7 @@ body {
 
 .CalcButtonEqual {
   background: #3498db;
+  color; #ffffff;
   border-radius: 50%;
   padding: 20px;
   transition: background 0.3s, transform 0.1s;
@@ -82,7 +84,7 @@ body {
 
 .MySurnameButton {
   background: #1b2269;
-  color: white;
+  color: #ffffff;
   border-radius: 50%;
   padding: 20px;
   cursor: pointer;
