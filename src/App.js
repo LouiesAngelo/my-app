@@ -69,12 +69,6 @@ function App() {
     setNum2(null);
   }
 
-  const nameClickHandler = (e) => {
-    e.preventDefault();
-    // Action to display your name
-    alert("Louies Angelo Mesia");
-  }
-
   const handleMySurnameClick = () => {
     // Display your surname
     setDisp('Louies Angelo Mesia');
@@ -101,9 +95,6 @@ function App() {
         <CalcButton label={0} onClick={numberClickHandler} buttonClassName={"CalcButtonNum"} />
         <CalcButton label={"="} onClick={equalClickHandler} buttonClassName={"CalcButtonEqual"} />
         <CalcButton label={"÷"} onClick={operatorClickHandler} />
-      </div>
-      <div className='Name'>
-        <CalcButton label={"Your Name"} onClick={nameClickHandler} buttonClassName={"CalcButtonName"} />
       </div>
       <div className='Surname'>
         <button className='CalcButton MySurnameButton' onClick={handleMySurnameClick}>
